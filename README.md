@@ -24,24 +24,22 @@ This diagram shows the flow of control, from the user's command to the final run
 
 ```mermaid
 graph LR
-    %% Direction: Left to Right
-    A([👩‍💻 Developer<br>(User)]) -->|runs| B([🧭 Terraform CLI])
-    B -->|1️⃣ Reads| C[(📄 main.tf<br>📄 variables.tf)]
-    B -->|2️⃣ Uses| D([🐳 Docker Provider])
-    D -->|3️⃣ Sends instructions to| E([⚙️ Docker Daemon])
-    E -->|4️⃣ Pulls| F[(📦 nginx:latest image)]
-    E -->|5️⃣ Creates| G([🧱 nginx_container])
-    E -->|6️⃣ Exposes port| H([🌐 8080 on Host])
+    A([Developer (User)]) -->|runs| B([Terraform CLI])
+    B -->|1. Reads| C[(main.tf, variables.tf)]
+    B -->|2. Uses| D([Docker Provider])
+    D -->|3. Sends instructions to| E([Docker Daemon])
+    E -->|4. Pulls| F[(nginx:latest image)]
+    E -->|5. Creates| G([nginx_container])
+    E -->|6. Exposes port| H[(8080 on Host)]
 
-    %% Styling
-    style A fill:#dbeafe,stroke:#1e3a8a,stroke-width:2px,color:#111
-    style B fill:#d1fae5,stroke:#065f46,stroke-width:2px,color:#111
-    style C fill:#fef3c7,stroke:#92400e,stroke-width:2px,color:#111
-    style D fill:#e0f2fe,stroke:#0369a1,stroke-width:2px,color:#111
-    style E fill:#f3e8ff,stroke:#6b21a8,stroke-width:2px,color:#111
-    style F fill:#fee2e2,stroke:#991b1b,stroke-width:2px,color:#111
-    style G fill:#fde68a,stroke:#92400e,stroke-width:2px,color:#111
-    style H fill:#e0f7fa,stroke:#006064,stroke-width:2px,color:#111
+    style A fill:#cce5ff,stroke:#003366,stroke-width:2px,color:#111
+    style B fill:#d4edda,stroke:#155724,stroke-width:2px,color:#111
+    style C fill:#fff3cd,stroke:#856404,stroke-width:2px,color:#111
+    style D fill:#cce5ff,stroke:#004085,stroke-width:2px,color:#111
+    style E fill:#f5ccff,stroke:#5a005a,stroke-width:2px,color:#111
+    style F fill:#f8d7da,stroke:#721c24,stroke-width:2px,color:#111
+    style G fill:#fff3cd,stroke:#856404,stroke-width:2px,color:#111
+    style H fill:#d1ecf1,stroke:#0c5460,stroke-width:2px,color:#111
 ```
 
 ## Execution Steps & Logs
