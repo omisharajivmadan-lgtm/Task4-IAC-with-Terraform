@@ -22,25 +22,7 @@ This repository is organized using Terraform best practices:
 
 This diagram shows the flow of control, from the user's command to the final running container.
 
-```mermaid
-graph LR
-    A([Developer (User)]) -->|runs| B([Terraform CLI])
-    B -->|1. Reads| C[(main.tf, variables.tf)]
-    B -->|2. Uses| D([Docker Provider])
-    D -->|3. Sends instructions to| E([Docker Daemon])
-    E -->|4. Pulls| F[(nginx:latest image)]
-    E -->|5. Creates| G([nginx_container])
-    E -->|6. Exposes port| H[(8080 on Host)]
-
-    style A fill:#cce5ff,stroke:#003366,stroke-width:2px,color:#111
-    style B fill:#d4edda,stroke:#155724,stroke-width:2px,color:#111
-    style C fill:#fff3cd,stroke:#856404,stroke-width:2px,color:#111
-    style D fill:#cce5ff,stroke:#004085,stroke-width:2px,color:#111
-    style E fill:#f5ccff,stroke:#5a005a,stroke-width:2px,color:#111
-    style F fill:#f8d7da,stroke:#721c24,stroke-width:2px,color:#111
-    style G fill:#fff3cd,stroke:#856404,stroke-width:2px,color:#111
-    style H fill:#d1ecf1,stroke:#0c5460,stroke-width:2px,color:#111
-```
+<img width="1271" height="1110" alt="Untitled diagram-2025-10-26-215713" src="https://github.com/user-attachments/assets/b92ff18a-d39e-4f03-af5e-2bb3074841e5" />
 
 ## Execution Steps & Logs
 
