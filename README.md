@@ -24,15 +24,15 @@ This diagram shows the flow of control, from the user's command to the final run
 
 ```mermaid
 graph TD;
-    A[Developer (User)] -- runs --> B{Terraform CLI};
-    B -- 1. Reads --> C(main.tf, variables.tf);
-    B -- 2. Uses --> D(Docker Provider);
-    D -- 3. Sends instructions to --> E[Docker Daemon];
-    E -- 4. Pulls --> F(nginx:latest image);
-    E -- 5. Creates --> G(nginx_container);
-    G -- 6. Exposes port --> H((8080 on Host));
-
+    A[Developer (User)] -->|runs| B{Terraform CLI};
+    B -->|1. Reads| C(main.tf, variables.tf);
+    B -->|2. Uses| D(Docker Provider);
+    D -->|3. Sends instructions to| E[Docker Daemon];
+    E -->|4. Pulls| F(nginx:latest image);
+    E -->|5. Creates| G(nginx_container);
+    G -->|6. Exposes port| H((8080 on Host));
 ```
+
 ## Execution Steps & Logs
 
 Here is the complete lifecycle of the Terraform configuration, from initialization to destruction.
